@@ -1,0 +1,37 @@
+{"products": [
+  {
+    "id": 1,
+    "imageUrl":
+      "https://images.unsplash.com/photo-1633435904321-c57da7093f02?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80",
+    "name": "Cake",
+    "count": 4,
+    "size": {
+      "width": 200,
+      "height": 200
+    },
+    "weight": "300g",
+    "comments": ["CommentModel", "CommentModel"]
+  },
+  {
+    "id": 2,
+    "imageUrl":
+      "https://images.unsplash.com/photo-1632138007282-219f0ccd9f25?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+    "name": "Bluebirds in the Backyard",
+    "count": 4,
+    "size": {
+      "width": 200,
+      "height": 200
+    },
+    "weight": "200g",
+    "comments": ["CommentModel", "CommentModel"]
+  }
+],
+  "comments": [
+    {
+      "id": 3,
+      "productId": 1,
+      "description": "some text here",
+      "date": "14:00 22.08.2021"
+    }
+  ]
+}
