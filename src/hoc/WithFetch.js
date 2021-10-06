@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 
 function withFetch(WrappedInHOCComponent, requestUrl) {
-  const MAIN_URL = "https://countries.trevorblades.com";
-
   const WithFetch = (props) => {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -16,25 +14,22 @@ function withFetch(WrappedInHOCComponent, requestUrl) {
       setIsLoading(true);
       setIsError(false);
       const myHeaders = new Headers();
-      myHeaders.append("Content-Type", "application/json");
-
-      const graphql = JSON.stringify({
-        query:
-          "query ContinentsList { continents { name countries { name languages { name }}}}",
-        variables: {},
-      });
+      myHeaders.append(
+        "Content-Type",
+        "application/json",
+        "Access-Control-Allow-Origin: null"
+      );
 
       const requestOptions = {
-        method: "POST",
+        method: "GET",
         headers: myHeaders,
-        body: graphql,
         redirect: "follow",
       };
 
       try {
-        fetch(MAIN_URL, requestOptions)
+        fetch("http://localhost:3000/products", requestOptions)
           .then((response) => response.text())
-          .then((result) => setData(JSON.parse(result).data.continents))
+          .then((result) => setData(result))
           .catch((error) => console.log("error", error));
         setIsLoading(false);
       } catch (err) {

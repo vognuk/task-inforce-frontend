@@ -5,6 +5,7 @@ import ListItemText from "@mui/material/ListItemText";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import Typography from "@mui/material/Typography";
+import { v4 as uuidv4 } from "uuid";
 // import FolderIcon from "@mui/icons-material/Folder";
 const listOfProducts = [
   {
@@ -35,15 +36,18 @@ const listOfProducts = [
   },
 ];
 
-const ProductsList = () => {
+const ProductsList = ({ data }) => {
+  console.log(JSON.parse(data));
+
   return (
     <>
       <Typography variant="h2" component="h2">
         Products list
       </Typography>
       <List>
+        {console.log("ProductsList", typeof listOfProducts)}
         {listOfProducts.map((product) => (
-          <ListItem>
+          <ListItem key={uuidv4()}>
             <ListItemIcon>{/* <FolderIcon /> */}</ListItemIcon>
             {product.name}
             <ListItemText />
